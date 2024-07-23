@@ -1,5 +1,15 @@
 import '../styles/index.scss';
+import { obtenerPokemon } from './api';
+import { pintarPokemones } from './pintar-pokemones';
 import pokebolaIcono from '../img/pokebola.png';
+
+
+const init = async () => {
+    const initialPokemon = await obtenerPokemon(48);
+    pintarPokemones(initialPokemon);
+  };
+  
+  init();
 
 const headerSection = document.querySelector('.header section');
 const imgElement = document.createElement('img');
