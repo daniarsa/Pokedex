@@ -5,6 +5,7 @@ $color-gray: #6f6f6f;
 $color-gray2: #a3a3a3;
 $color-black: #373737;
 $color-white: #ffffff;
+$general-fonts: "Play", sans-serif;
 
 * {
   margin: 0;
@@ -15,7 +16,7 @@ $color-white: #ffffff;
 
 body {
   background-color: $color-white;
-  padding: 0.5rem 1.5rem;
+  // padding: 0.5rem 1.5rem;
 }
 /* HEADER SECTION */
 
@@ -29,6 +30,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    padding: 1rem;
 
     .logo {
       display: flex;
@@ -76,14 +78,81 @@ body {
         justify-content: center;
         align-items: center;
 
-        svg {
+        svg path{
           width: 1.76vw;
+          color: white;
         }
       }
     }
   }
 }
 /* END SECTION HEADER */
+
+
+// Media query para adaptar el encabezado a pantallas móviles
+@media (max-width: 768px) {
+  section {
+    flex-direction: column; // Cambiar a columna para móviles
+    align-items: center; // Alinear verticalmente
+    gap: 1rem; // Espacio entre los elementos
+
+    .logo {
+      margin-bottom: 1rem; // Espacio debajo del logo
+      margin-right: 0; // Eliminar margen derecho
+    }
+
+    h1 {
+      margin-bottom: 1rem; // Espacio debajo del título
+    }
+
+    form {
+      width: 80%; // Asegurar que el formulario se ajuste al ancho del contenedor
+      height: 30px;
+      margin-top: 0; // Eliminar margen superior
+
+      input {
+        
+        width: 84.5%;
+        height: 100%;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        color: $bg-color;
+        border-right: none;
+      }
+
+      button {
+        svg {
+          width: 3vw;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      gap: 1rem; // Espacio entre los elementos en pantallas más pequeñas
+
+      .logo {
+        margin-bottom: 0.5rem; // Espacio debajo del logo
+      }
+
+      h1 {
+        margin-bottom: 0.5rem; // Espacio debajo del título
+      }
+
+      form {
+        width: 80%; // Asegurar que el formulario se ajuste al ancho del contenedor
+        button {
+          svg {
+            width: 4vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 
 
@@ -97,6 +166,7 @@ body {
   border-radius: 10px;
   max-width: 800px; // Ajusta el ancho máximo si es necesario
   margin: auto;
+  margin-bottom: 2rem;
 
   @media (min-width: 601px) {
     flex-direction: row;
@@ -188,21 +258,108 @@ h2 {
 
 /* SECTION FOOTER */
 .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
+  padding: 3rem;
+  background-color: #FE0002;
+  border-radius: 50px 50px 0 0;
 
   section {
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: row; // Alinear en columna para el título y las cards
     align-items: center;
-    gap: 1.5rem;
-    background-color: #d9620d;
-    width: 100%;
-    /* height:200px; */
+
+    h3 {
+      font-size: 2.5rem;
+      margin-bottom: 15px; // Espacio entre el título y las cards
+      
+    }
+
+    #pokemon-cards {
+      display: flex; // Diseño en flex por defecto para escritorio
+      gap: 4rem; // Espacio entre las cards
+      flex-wrap: wrap; // Permitir que las cards se envuelvan en varias líneas
+
+      .pokemon-card {
+        position: relative;
+        width: 115px; // Tamaño base de las cards
+        height: 115px;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-end; // Alinear los elementos al final
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        overflow: visible; // Permitir que el contenido se desborde
+        padding-bottom: 2rem; // Espacio para el nombre
+        flex-direction: column;
+
+        .pokemon-img {
+          width: 150px;
+          height: 150px;
+          position: absolute;
+          top: -50px; // Posicionar la imagen para que sobresalga
+        }
+
+        .pokemon-name {
+          position: absolute;
+          bottom: 0; // Colocar el nombre en la parte inferior
+          background: rgba(0, 0, 0, 0.6); // Fondo semitransparente para el nombre
+          text-align: center;
+          font-size: 12px;
+          padding: 2px 0;
+          width: 100%;
+        }
+
+        &.type-fire {
+          background-color: #F08030;
+        }
+
+        &.type-water {
+          background-color: #6890F0;
+        }
+
+        &.type-grass {
+          background-color: #78C850;
+        }
+
+        // Agrega más tipos según sea necesario
+        &.type-default {
+          background-color: #A8A878;
+        }
+      }
+      .error-message {
+        color: red;
+        font-size: 1.2em;
+        text-align: center;
+        margin: 20px;
+      }
+      
+    }
   }
 
-  p {
-    font-size: 2.5vw;
+  // Media query para vistas móviles
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column; // Alinear en columna para móviles
+    }
+    
+    #pokemon-cards {
+      display: grid; // Cambiar a diseño en cuadrícula
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // Dos columnas en tamaño reducido
+      gap: 1rem; // Espacio entre las cards
+      margin-top: 15px; // Ajustar margen para colocar las cards 15px abajo del título
+      overflow-x: hidden; // Evitar scroll horizontal
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #pokemon-cards {
+      grid-template-columns: repeat(2, 1fr); // Dos columnas en pantalla pequeña
+      gap: 1rem; // Espacio entre las cards
+      margin-top: 15px; // Ajustar margen para colocar las cards 15px abajo del título
+      overflow-x: hidden; // Evitar scroll horizontal
+      justify-content: center;
+    }
   }
 }

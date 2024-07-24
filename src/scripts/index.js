@@ -1,12 +1,14 @@
 import '../styles/index.scss';
 import { obtenerPokemon } from './api';
 import { pintarPokemones } from './pintar-pokemones';
+import { loadPokemonFooter } from './footer.js'; 
 import pokebolaIcono from '../img/pokebola.png';
 
 
 const init = async () => {
     const initialPokemon = await obtenerPokemon(48);
     pintarPokemones(initialPokemon);
+    loadPokemonFooter();
   };
   
   init();
