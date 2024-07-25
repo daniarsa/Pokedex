@@ -20,7 +20,7 @@ const importAll = (r) => {
   };
   
   // Función para mostrar los detalles del Pokémon
-  export const pintarPokemones = (pokemon) => {
+  export const paintPokemons = (pokemon) => {
     const detailsContainer = document.getElementById("pokemon-details");
   
     // Crear contenedor principal
