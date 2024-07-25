@@ -87,7 +87,7 @@ export const loadPokemonFooter = async (query = '') => {
     if (pokemon) {
       pokemonCardsContainer.appendChild(createPokemonCard(pokemon));
     } else {
-      showError('Pokémon no encontrado. Verifica la ortografía.');
+      showError('Pokémon no encontrado. Intenta con otro nombre.');
     }
   } else {
     // Obtener y mostrar 4 Pokémon aleatorios

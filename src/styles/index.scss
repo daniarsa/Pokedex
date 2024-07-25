@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
 $bg-color: #181818;
 $color-gray: #6f6f6f;
@@ -11,12 +11,11 @@ $general-fonts: "Play", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Comfortaa", sans-serif;;
 }
 
 body {
-  background-color: $color-white;
-  // padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 /* HEADER SECTION */
 
@@ -44,8 +43,8 @@ body {
     }
 
     h1 {
-      font-size: 3.5vw;
-      color: #d9620d;
+      font-size: 2.5vw;
+      color: #000000;
       margin: 0; // Asegúrate de eliminar el margen por defecto
     }
 
@@ -55,7 +54,7 @@ body {
       aspect-ratio: 568/48;
 
       input {
-        background-color: transparent;
+        background-color: $color-white;
         outline: none;
         border: 1px solid $color-gray;
         border-radius: 5px 0 0 5px;
@@ -158,12 +157,12 @@ body {
 
 /* MAIN SECTION */
 .pokemon-details-container {
+    background: url(/src/img/backgraund-url.jpg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #cccccc;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   max-width: 800px; // Ajusta el ancho máximo si es necesario
   margin: auto;
   margin-bottom: 2rem;
@@ -189,14 +188,20 @@ body {
 .pokemon-img {
   max-width: 100%;
   height: auto;
+  transition: 0.5s;
+}
+
+.pokemon-img:hover{
+  transform: scale(1.2);
 }
 
 .pokemon-header {
+  gap: 8px;
   display: flex;
   align-items: center; // Alinea el ícono y el nombre en la misma línea
-  background: #fff;
+  background: #050505b9;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 10px;
   width: 100%;
   justify-content: center;
@@ -208,6 +213,7 @@ body {
 }
 
 .type-icon {
+  margin-top: 5px;
   width: 30px;
   height: 30px;
   margin-bottom: 10px; // Espacio entre el ícono y el nombre en dispositivos pequeños
@@ -215,13 +221,14 @@ body {
 
 h2 {
   font-size: 24px;
-  margin: 0;
+  margin-top: 10px;
+  color: $color-white;
 }
 
 .pokemon-info {
-  background: #fff;
+  background: #8100005e;
   padding: 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 60%;
   height: 60vh;
   text-align: center;
@@ -233,7 +240,8 @@ h2 {
       display: flex;
       flex-direction: column; // Alinea el nombre y el valor en una columna
       margin: 5px 0;
-      font-size: 16px;
+      font-size: 20px;
+      color: $color-white;
 
       strong {
           font-weight: bold;
@@ -259,8 +267,10 @@ h2 {
 /* SECTION FOOTER */
 .footer {
   padding: 3rem;
-  background-color: #FE0002;
-  border-radius: 50px 50px 0 0;
+  background-color: #050505b9;
+  border-radius: 15px 15px 0 0;
+
+
 
   section {
     display: flex;
@@ -270,7 +280,8 @@ h2 {
 
     h3 {
       font-size: 2.5rem;
-      margin-bottom: 15px; // Espacio entre el título y las cards
+      margin-bottom: 15px;
+      color: $color-white; // Espacio entre el título y las cards
       
     }
 
@@ -308,27 +319,28 @@ h2 {
           font-size: 12px;
           padding: 2px 0;
           width: 100%;
+          border-radius: 0 0 5px 5px;
         }
 
         &.type-fire {
-          background-color: #F08030;
+          background-color: #da4444d5;
         }
 
         &.type-water {
-          background-color: #6890F0;
+          background-color: #2889f89a;
         }
 
         &.type-grass {
-          background-color: #78C850;
+          background-color: #41d65a75;
         }
 
         // Agrega más tipos según sea necesario
         &.type-default {
-          background-color: #A8A878;
+          background-color: #a3c4c2b0;
         }
       }
       .error-message {
-        color: red;
+        color: rgb(0, 0, 0);
         font-size: 1.2em;
         text-align: center;
         margin: 20px;
