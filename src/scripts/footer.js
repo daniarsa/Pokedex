@@ -1,11 +1,11 @@
 
-import { obtenerPokemon } from './api.js';
-import { pintarPokemones } from './pintar-pokemones.js';
+import { getPokemons } from './api.js';
+import { paintPokemons } from './pintar-pokemones.js';
 
 // Función para obtener un Pokémon aleatorio
 const getRandomPokemon = async () => {
   const randomId = Math.floor(Math.random() * 898) + 1; // Suponiendo que hay 898 Pokémon
-  return await obtenerPokemon(randomId);
+  return await getPokemons(randomId);
 };
 
 // Función para obtener Pokémon por nombre
@@ -63,8 +63,8 @@ const createPokemonCard = (pokemon) => {
   // Añadir el evento de clic para mostrar los detalles en el main
   pokemonCard.addEventListener('click', async () => {
     const pokemonId = pokemonCard.dataset.pokemonId;
-    const pokemon = await obtenerPokemon(pokemonId);
-    pintarPokemones(pokemon);
+    const pokemon = await getPokemons(pokemonId);
+    paintPokemons(pokemon);
   });
 
   return pokemonCard;
