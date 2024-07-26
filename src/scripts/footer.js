@@ -31,6 +31,26 @@ const getTypeClass = (type) => {
       return 'type-water';
     case 'grass':
       return 'type-grass';
+    case 'bug':
+      return 'type-bug';
+    case 'electric':
+      return 'type-electric';
+    case 'steel':
+      return 'type-steel';
+    case 'psychic':
+      return 'type-psychic';
+    case 'fairy':
+      return 'type-fairy';
+    case 'normal':
+      return 'type-normal';
+    case 'ghost':
+      return 'type-ghost';
+    case 'rock':
+      return 'type-rock';
+    case 'dark':
+      return 'type-dark';
+    case 'poison':
+      return 'type-poison';
     // Agrega más tipos según sea necesario
     default:
       return 'type-default';
