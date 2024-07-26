@@ -16,6 +16,7 @@ $general-fonts: "Play", sans-serif;
 
 body {
   padding: 0.5rem 1.5rem;
+  background-image: url(/src/img/fondo4.jpg);
 }
 /* HEADER SECTION */
 
@@ -28,8 +29,11 @@ body {
   section {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     padding: 1rem;
+    background-color:  #050505b9;
+    border-radius: 15px 15px;
 
     .logo {
       display: flex;
@@ -44,7 +48,7 @@ body {
 
     h1 {
       font-size: 2.5vw;
-      color: #000000;
+      color: $color-white;
       margin: 0; // Asegúrate de eliminar el margen por defecto
     }
 
@@ -57,9 +61,9 @@ body {
       input {
         background-color: $color-white;
         outline: none;
-        border: 1px solid $color-gray;
-        border-radius: 5px 0 0 5px;
-        width: 84.5%;
+        border: 2px solid #810061ab;
+        border-radius: 20px 0 0 20px;
+        width: 100%;
         height: 100%;
         font-size: 1.3vw;
         padding: 0.5rem 1rem;
@@ -70,9 +74,9 @@ body {
       button {
         width: 15.5%;
         height: 100%;
-        background-color: $color-black;
-        border: 2px solid $color-black;
-        border-radius: 0 5px 5px 0;
+        background-color: #810061ab;
+        border: 2px solid #810061ab;
+        border-radius: 0 20px 20px 0;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -158,14 +162,16 @@ body {
 
 /* MAIN SECTION */
 .pokemon-details-container {
-    background: url(/src/img/backgraund-url.jpg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    // background: url(/src/img/backgraund-url.jpg);
+  background-color: #000000bd;
+  // display: flex;
+  // flex-direction: column;
+  // align-items:flex-end;
   padding: 20px;
   border-radius: 20px;
   max-width: 800px; // Ajusta el ancho máximo si es necesario
   margin: auto;
+  margin-top: 20px;
   margin-bottom: 2rem;
 
   @media (min-width: 601px) {
@@ -227,14 +233,14 @@ h2 {
 }
 
 .pokemon-info {
-  background: #8100005e;
+  background: #810061ab;
   padding: 30px;
   border-radius: 10px;
-  width: 60%;
-  height: 60vh;
+  width: 100%;
+  height: 50%;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); // Dos columnas
+  grid-template-columns: repeat(3, 1fr); // Dos columnas
   gap: 10px; // Espacio entre columnas
 
   p {
@@ -324,20 +330,61 @@ h2 {
         }
 
         &.type-fire {
-          background-color: #da4444d5;
+          background-color: #e07918d5;
         }
 
         &.type-water {
-          background-color: #2889f89a;
+          background-color: #2b75c99a;
         }
 
         &.type-grass {
-          background-color: #41d65a75;
+          background-color: #a9f3ad86;
+        }
+
+        &.type-bug {
+          background-color: #97ee6fc5;
+        }
+
+        &.type-electric {
+          background-color: #fadd36be;
+        }
+
+        &.type-psychic {
+          background-color: #dca0ff77;
+        }
+
+        &.type-fairy {
+          background-color: #faaadfc4;
+        }
+
+
+        &.type-steel {
+          background-color: #f7f7f7b2;
+        }
+
+        &.type-fairy {
+          background-color: transparent;
+        }
+
+        &.type-ghost {
+          background-color: #f5edede5;
+        }
+
+        &.type-rock {
+          background-color: #8a7143ab;
+        }
+
+        &.type-dark {
+          background-color: #000000ab;
+        }
+
+        &.type-poison {
+          background-color: #350f32ce;
         }
 
         // Agrega más tipos según sea necesario
         &.type-default {
-          background-color: #a3c4c2b0;
+          background-color: #d5d8d87c;
         }
       }
       .error-message {
