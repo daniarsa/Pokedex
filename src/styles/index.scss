@@ -35,21 +35,24 @@ body {
     background-color:  #050505b9;
     border-radius: 15px 15px;
 
-    .logo {
+    // .logo {
+    //   display: flex;
+    //   align-items: center;
+    //   margin-right: 1rem;
+    // }
+
+    .logo-img {
       display: flex;
       align-items: center;
-      margin-right: 1rem;
-
-      .logo-img {
-        width: 50px; // Ajusta según el tamaño deseado
-        height: auto;
-      }
+      // margin-right: 1rem;
+      width: 7%; // Ajusta según el tamaño deseado
+      height: auto;
     }
 
     h1 {
-      font-size: 2.5vw;
+      font-size: 2.3vw;
       color: $color-white;
-      margin: 0; // Asegúrate de eliminar el margen por defecto
+      margin-right: 2%; // Asegúrate de eliminar el margen por defecto
     }
 
     form {
@@ -84,7 +87,7 @@ body {
 
         svg path{
           width: 1.76vw;
-          color: white;
+          color: $color-white;
         }
       }
     }
@@ -95,24 +98,34 @@ body {
 
 // Media query para adaptar el encabezado a pantallas móviles
 @media (max-width: 768px) {
+  .pokemon-header{
+    .type-icon{
+      margin-top: 1%;
+    }
+  }
+  .header {
   section {
     flex-direction: column; // Cambiar a columna para móviles
     align-items: center; // Alinear verticalmente
     gap: 1rem; // Espacio entre los elementos
 
-    .logo {
-      margin-bottom: 1rem; // Espacio debajo del logo
+    .logo-img {
+      width: 20%;
+      margin-bottom: 1rem;
+      margin-top: 1rem; // Espacio debajo del logo
       margin-right: 0; // Eliminar margen derecho
     }
 
     h1 {
+      font-size: 1rem;
       margin-bottom: 1rem; // Espacio debajo del título
     }
 
     form {
       width: 80%; // Asegurar que el formulario se ajuste al ancho del contenedor
       height: 30px;
-      margin-top: 0; // Eliminar margen superior
+      margin-top: 0;
+      margin-bottom: 1rem; // Eliminar margen superior
 
       input {
         
@@ -131,6 +144,7 @@ body {
       }
     }
   }
+}
 
   @media (max-width: 480px) {
     section {
@@ -215,7 +229,7 @@ body {
 
   @media (min-width: 601px) {
     margin-bottom: 0;
-    align-items: flex-start; // Alinea el encabezado a la izquierda en pantallas grandes
+    align-items: flex-start;// Alinea el encabezado a la izquierda en pantallas grandes
   }
 }
 
@@ -263,8 +277,16 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .pokemon-header{
+    .type-icon{
+      margin-top: 5%;
+    }
+  }
   .pokemon-details-container {
     max-width: 100%;
+  }
+  .pokemon-info{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

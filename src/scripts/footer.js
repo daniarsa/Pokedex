@@ -13,11 +13,11 @@ const getPokemonByName = async (name) => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
     if (!response.ok) {
-      throw new Error('Pokémon not found');
+      throw new Error('Pokémon no encontrado');
     }
     return await response.json();
   } catch (error) {
-    console.error('Error fetching the Pokémon data', error);
+    console.error('Pokémon no encontrado. Intenta con otro nombre.', error);
     return null;
   }
 };
