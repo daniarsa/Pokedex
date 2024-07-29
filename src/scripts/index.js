@@ -32,6 +32,7 @@ const handleSearchSubmit = async (event) => {
   const query = searchInput.value.trim();
   if (query) {
     await loadPokemonFooter(query);
+    await loadPokemonMain(query);
   }
 };
 
@@ -40,10 +41,25 @@ const handleSearchInput = async () => {
   const query = searchInput.value.trim();
   if (query.length > 1) { // Para evitar realizar búsquedas con solo un carácter
     await loadPokemonFooter(query);
+    await loadPokemonMain(query);
   } else if (query.length === 0) {
-    await loadPokemonFooter(); // Mostrar Pokémon aleatorios si no hay búsqueda
+    await loadPokemonFooter();  // Mostrar Pokémon aleatorios si no hay búsqueda
   }
 };
+
+const loadPokemonMain = async (query = '') => {
+  const pokemonDetailsContainer = document.getElementById('pokemon-details');
+  pokemonDetailsContainer.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos resultados
+
+  if (query) {
+    try {
+    } catch (error) {
+      console.error('Error fetching Pokémon:', error);
+      showError('Ocurrió un error al buscar el Pokémon. Intenta nuevamente.');
+    }
+  }
+};
+
 
 // Agregar el manejador de eventos al formulario y al campo de búsqueda
 searchForm.addEventListener('submit', handleSearchSubmit);
