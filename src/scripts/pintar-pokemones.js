@@ -42,7 +42,7 @@ const importAll = (r) => {
     typeIcon.classList.add("type-icon");
   
     const title = document.createElement("h2");
-    title.textContent = pokemon.name;
+    title.textContent = pokemon.name.toUpperCase();
   
     headerDiv.appendChild(typeIcon);
     headerDiv.appendChild(title);

@@ -2,7 +2,7 @@ import '../styles/index.scss';
 import { getPokemons } from './api';
 import { paintPokemons } from './pintar-pokemones';
 import { loadPokemonFooter } from './footer.js'; 
-import pokebolaIcono from '../img/logopokebola.png';
+import pokebolaIcono from '../img/pokebola1.jpg';
 
 
 const init = async () => {
@@ -22,7 +22,6 @@ imgElement.classList.add('logo-img'); // Añadir una clase para estilos
 // Insertar la imagen antes del título
 headerSection.insertBefore(imgElement, headerSection.querySelector('h1'));
 
-// Obtener elementos del DOM
 const searchForm = document.getElementById('busqueda');
 const searchInput = document.getElementById('inputBusqueda');
 
@@ -32,35 +31,26 @@ const handleSearchSubmit = async (event) => {
   const query = searchInput.value.trim();
   if (query) {
     await loadPokemonFooter(query);
-    await loadPokemonMain(query);
+  } else  {
+    await loadPokemonFooter(); // Mostrar Pokémon aleatorios si no hay búsqueda
   }
 };
 
-// Función para manejar la búsqueda dinámica
-const handleSearchInput = async () => {
-  const query = searchInput.value.trim();
-  if (query.length > 1) { // Para evitar realizar búsquedas con solo un carácter
-    await loadPokemonFooter(query);
-    await loadPokemonMain(query);
-  } else if (query.length === 0) {
-    await loadPokemonFooter();  // Mostrar Pokémon aleatorios si no hay búsqueda
-  }
-};
-
-const loadPokemonMain = async (query = '') => {
-  const pokemonDetailsContainer = document.getElementById('pokemon-details');
-  pokemonDetailsContainer.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos resultados
-
-  if (query) {
-    try {
-    } catch (error) {
-      console.error('Error fetching Pokémon:', error);
-      showError('Ocurrió un error al buscar el Pokémon. Intenta nuevamente.');
-    }
-  }
-};
+searchForm.addEventListener('submit', handleSearchSubmit);
 
 
 // Agregar el manejador de eventos al formulario y al campo de búsqueda
 searchForm.addEventListener('submit', handleSearchSubmit);
 searchInput.addEventListener('input', handleSearchInput);
+
+
+//Modo oscuro
+// Obtener el botón y el cuerpo del documento
+const toggleButton = document.getElementById('toggle-dark-mode');
+const body = document.body;
+
+
+// Función para alternar el modo oscuro
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
