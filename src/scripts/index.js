@@ -22,8 +22,8 @@ imgElement.classList.add('logo-img'); // Añadir una clase para estilos
 // Insertar la imagen antes del título
 headerSection.insertBefore(imgElement, headerSection.querySelector('h1'));
 
-const searchForm = document.getElementById('busqueda');
-const searchInput = document.getElementById('inputBusqueda');
+const searchForm = document.getElementById("busqueda");
+const searchInput = document.getElementById("inputBusqueda");
 
 // Función para manejar el envío del formulario
 const handleSearchSubmit = async (event) => {
@@ -31,17 +31,12 @@ const handleSearchSubmit = async (event) => {
   const query = searchInput.value.trim();
   if (query) {
     await loadPokemonFooter(query);
-  } else  {
+  } else {
     await loadPokemonFooter(); // Mostrar Pokémon aleatorios si no hay búsqueda
   }
 };
 
-searchForm.addEventListener('submit', handleSearchSubmit);
-
-
-// Agregar el manejador de eventos al formulario y al campo de búsqueda
-searchForm.addEventListener('submit', handleSearchSubmit);
-searchInput.addEventListener('input', handleSearchInput);
+searchForm.addEventListener("submit", handleSearchSubmit);
 
 
 //Modo oscuro

@@ -22,7 +22,11 @@ const importAll = (r) => {
   // Función para mostrar los detalles del Pokémon
   export const paintPokemons = (pokemon) => {
     const detailsContainer = document.getElementById("pokemon-details");
-  
+    
+    detailsContainer.innerHTML = "";
+
+
+
     // Crear contenedor principal
     const detailsDiv = document.createElement("div");
     detailsDiv.classList.add("pokemon-details-container");
