@@ -23,7 +23,7 @@ body {
 }
 
 /* Modo oscuro */
-body.dark-mode {
+body.dark_mode {
   background-color: black;
   color: white;
 }
@@ -63,7 +63,7 @@ body.dark-mode {
 
     h1 {
       font-size: 2.3vw;
-      color: $color-white;
+      // color: $color-white;
       margin-right: 2%; // Asegúrate de eliminar el margen por defecto
     }
 
@@ -101,6 +101,46 @@ body.dark-mode {
           width: 1.76vw;
           color: $color-white;
         }
+      }
+    }
+    #toggle_dark_mode{
+      background-color: blue;
+      border-radius: 20px;
+      border: none;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      outline: none;
+      &::after{
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: white;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0px 0px 2px 2px black;
+      }
+      &.active{
+        background: yellow;
+        color: #181818;
+        &::after{
+          right: 0;
+          left: unset;
+        }
+      }
+
+      svg{
+        width: 20px;
+        height: 20px;
+        line-height: 30px;
+        display: block;
+        background: none;
+        color: white;
       }
     }
   }
@@ -255,7 +295,7 @@ body.dark-mode {
 h2 {
   font-size: 24px;
   margin-top: 10px;
-  color: $color-white;
+  // color: $color-white;
 }
 
 .pokemon-info {
@@ -274,7 +314,7 @@ h2 {
       flex-direction: column; // Alinea el nombre y el valor en una columna
       margin: 5px 0;
       font-size: 20px;
-      color: $color-white;
+      // color: $color-white;
 
       strong {
           font-weight: bold;
@@ -324,7 +364,7 @@ h2 {
     h3 {
       font-size: 2.5rem;
       margin-bottom: 15px;
-      color: $color-white; // Espacio entre el título y las cards
+      // color: $color-white; 
       
     }
 
@@ -341,7 +381,7 @@ h2 {
         display: flex;
         align-items: flex-end; // Alinear los elementos al final
         justify-content: center;
-        color: white;
+        // color: white;
         font-weight: bold;
         overflow: visible; // Permitir que el contenido se desborde
         padding-bottom: 2rem; // Espacio para el nombre

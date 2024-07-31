@@ -41,11 +41,11 @@ searchForm.addEventListener("submit", handleSearchSubmit);
 
 //Modo oscuro
 // Obtener el botón y el cuerpo del documento
-const toggleButton = document.getElementById('toggle-dark-mode');
+const toggleButton = document.getElementById('toggle_dark_mode');
 const body = document.body;
-
 
 // Función para alternar el modo oscuro
 toggleButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+  body.classList.toggle('dark_mode');
+  toggleButton.classList.toggle('active');
 });
