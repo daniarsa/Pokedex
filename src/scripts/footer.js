@@ -67,7 +67,7 @@ const createPokemonCard = (pokemon) => {
 
   // Añadir la imagen del Pokémon
   const pokemonImg = document.createElement('img');
-  pokemonImg.src = pokemon.sprites.other["official-artwork"].front_default;
+  pokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
   pokemonImg.alt = pokemon.name;
   pokemonImg.classList.add('pokemon-img');
 

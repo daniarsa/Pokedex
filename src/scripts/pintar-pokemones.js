@@ -53,7 +53,7 @@ const importAll = (r) => {
   
     // Imagen del Pokémon
     const image = document.createElement("img");
-    image.src = pokemon.sprites.other["official-artwork"].front_default; // Ajusta la ruta de la imagen
+    image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
     image.alt = pokemon.name;
     image.classList.add("pokemon-img");
   

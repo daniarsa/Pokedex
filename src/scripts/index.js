@@ -13,6 +13,7 @@ const init = async () => {
   
   init();
 
+// Insertar la imagen del logo
 const headerSection = document.querySelector('.header section');
 const imgElement = document.createElement('img');
 imgElement.src = pokebolaIcono;
@@ -40,6 +41,7 @@ searchForm.addEventListener("submit", handleSearchSubmit);
 
 
 //Modo oscuro
+
 // Obtener el botón y el cuerpo del documento
 const toggleButton = document.getElementById('toggle_dark_mode');
 const body = document.body;
