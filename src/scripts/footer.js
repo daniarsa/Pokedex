@@ -10,13 +10,10 @@ const getRandomPokemon = async () => {
 // Función para obtener Pokémon por nombre
 const getPokemonByName = async (name) => {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
-    if (!response.ok) {
-      return null;
-    }
-    return await response.json();
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
+    return response.data;
   } catch (error) {
-    console.error('Pokémon no encontrado. Intenta con otro nombre.', error);
+    console.error('Pokémon no encontrado. Intenta con otro nombre.', error.response ? error.response.data : error.message);
     return null;
   }
 };
